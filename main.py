@@ -13,11 +13,11 @@ def index():
 
     return response
 
-    
+
 @app.route('/hello')
 def  hello():
     user_ip = request.cookies.get('user_ip')
-    return f'Hello there, your IP is {user_ip}' #will print the message on screen
+    return render_template('hello.html', user_ip=user_ip) #the second argument is a variable sended to the html file.
 
 
 if __name__ == '__main__':
